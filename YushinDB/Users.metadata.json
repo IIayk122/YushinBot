@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"YushinDB.Users"},{"v":2,"unique":true,"key":{"id":1.77458367e+08},"name":"id_177458367","ns":"YushinDB.Users"}],"uuid":"396d112061d546f598dd69d301aeace7"}
