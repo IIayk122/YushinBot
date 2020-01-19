@@ -16,7 +16,12 @@ import (
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
-var api = &vkapi.Api{}
+var (
+	api              = &vkapi.Api{}
+	tokenBot         = "******:*****_*****************************"
+	connectionString = "mongodb://user:pass@localhost:27017"
+	nameDB           = "YushinDB"
+)
 
 func main() {
 	//---------------------------------------------------------------------------------------------------
@@ -39,7 +44,7 @@ func main() {
 		return true
 	})
 	b, err := tb.NewBot(tb.Settings{
-		Token:  "*****", 
+		Token:  tokenBot,
 		Poller: spamProtected,
 		Client: httpClient,
 	})
@@ -49,7 +54,7 @@ func main() {
 	}
 
 	//---------------------------------------------------------------------------------------------------
-	clientOptions := options.Client().ApplyURI("******")
+	clientOptions := options.Client().ApplyURI(connectionString)
 
 	// Connect to MongoDB
 	client, err := mongo.Connect(context.TODO(), clientOptions)
@@ -63,7 +68,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer client.Disconnect(context.TODO())
-	DB := client.Database("YushinDB")
+	DB := client.Database(nameDB)
 
 	log.Println("Connected to MongoDB!")
 
