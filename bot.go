@@ -15,7 +15,7 @@ import (
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
-var (
+const (
 	tokenBot         = "******:*****_*****************************"
 	connectionString = "mongodb://user:pass@localhost:27017"
 	nameDB           = "YushinDB"
