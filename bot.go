@@ -3,7 +3,6 @@ package main
 import (
 	"NewYushinBot/handlers"
 	"NewYushinBot/keyboard"
-	"NewYushinBot/vkapi"
 	"context"
 	"log"
 	"net/http"
@@ -17,7 +16,6 @@ import (
 )
 
 var (
-	api              = &vkapi.Api{}
 	tokenBot         = "******:*****_*****************************"
 	connectionString = "mongodb://user:pass@localhost:27017"
 	nameDB           = "YushinDB"
