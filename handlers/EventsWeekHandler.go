@@ -1,15 +1,18 @@
 package handlers
 
 import (
-	"go.mongodb.org/mongo-driver/mongo"
-	tb "gopkg.in/tucnak/telebot.v2"
 	"log"
+
+	"go.mongodb.org/mongo-driver/mongo"
+	"gopkg.in/tucnak/telebot.v2"
+	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 //EventsWeekHandle Присылает фотки из закрепленного поста в группе в вк
 func EventsWeekHandle(b *tb.Bot, DB *mongo.Database) func(*tb.Message) {
 	return func(msg *tb.Message) {
-		api.AccessToken = "23fd9e9323fd9e9323fd9e93932395e535223fd23fd9e937fa4acc326ca587052f84589"
+		api.AccessToken = ""
+		b.Notify(msg.Chat, telebot.UploadingPhoto)
 		b.Send(msg.Sender, "Мероприятия на неделю")
 		album := tb.Album{}
 		post := GetPinPost()
@@ -18,10 +21,17 @@ func EventsWeekHandle(b *tb.Bot, DB *mongo.Database) func(*tb.Message) {
 			album = append(album, tbphoto)
 		}
 		if album != nil {
-			b.SendAlbum(msg.Sender, album)
-			log.Println(album)
+			_, err := b.SendAlbum(msg.Sender, album)
+
+			if err != nil {
+				log.Println(err)
+			}
 		} else {
-			b.Send(msg.Sender, "Пока незивестно 😔")
+			_, err := b.Send(msg.Sender, "Пока незивестно 😔")
+
+			if err != nil {
+				log.Println(err)
+			}
 		}
 	}
 }

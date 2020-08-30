@@ -17,8 +17,9 @@ func StartHandle(b *tb.Bot, DB *mongo.Database) func(*tb.Message) {
 		if err != nil {
 			log.Print("Дубль:\n", err)
 		}
-		if keyboard.Give == false {
+		if !keyboard.Give {
 			b.Send(msg.Sender, "Привет "+msg.Sender.FirstName+"!\n"+
+
 				"Добро пожаловать в YushinBot", &tb.ReplyMarkup{
 				ResizeReplyKeyboard: true,
 				ReplyKeyboard:       keyboard.MainMenu})

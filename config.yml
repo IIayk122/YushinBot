@@ -1,0 +1,13 @@
+env: dev
+
+bot:
+  token: 
+  poller-timeout: 3600 # second
+
+mongo:
+  host: 127.0.0.1
+  port: 27017
+  name: YushinDB
+  user: root 
+  password: example 
+  auth_source: admin

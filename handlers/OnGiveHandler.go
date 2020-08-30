@@ -2,12 +2,13 @@ package handlers
 
 import (
 	"NewYushinBot/keyboard"
+
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 func OnGiveHandle(b *tb.Bot) func(*tb.Message) {
 	return func(msg *tb.Message) {
-		if keyboard.Give == false {
+		if !keyboard.Give {
 			b.Send(msg.Sender, "Розыгрыш включен")
 			keyboard.Give = true
 		} else {

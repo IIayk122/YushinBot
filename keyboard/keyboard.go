@@ -16,18 +16,18 @@ var (
 	GiveButton    = tb.ReplyButton{Text: "Розыгрыш"}
 
 	MainMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{Record},
-		[]tb.ReplyButton{EventsDay},
-		[]tb.ReplyButton{YushinMenuBtn},
-		[]tb.ReplyButton{FirstVisit, SecondVisit},
+		{Record},
+		{EventsDay},
+		{YushinMenuBtn},
+		{FirstVisit, SecondVisit},
 	}
-	
+
 	MainMenuGive = [][]tb.ReplyButton{
-		[]tb.ReplyButton{GiveButton},
-		[]tb.ReplyButton{Record},
-		[]tb.ReplyButton{EventsDay},
-		[]tb.ReplyButton{YushinMenuBtn},
-		[]tb.ReplyButton{FirstVisit, SecondVisit},
+		{GiveButton},
+		{Record},
+		{EventsDay},
+		{YushinMenuBtn},
+		{FirstVisit, SecondVisit},
 	}
 
 	//__________________________________________________________________________________________________________________МЕНЮ
@@ -38,10 +38,9 @@ var (
 	Wear     = tb.ReplyButton{Text: "Мерч"}
 
 	YushinMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{Bar},
-		[]tb.ReplyButton{HairCuts, Kitchen},
-		[]tb.ReplyButton{Smoke, Wear},
-		[]tb.ReplyButton{MainMenuBtn},
+		{Bar},
+		{HairCuts, Kitchen, Smoke},
+		{MainMenuBtn},
 	}
 
 	//__________________________________________________________________________________________________________________Я СТАРОЖИЛ
@@ -55,11 +54,10 @@ var (
 	Lost           = tb.ReplyButton{Text: "Потеряшки"}
 
 	SecondVisitMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{SubscribeEvent},
-		[]tb.ReplyButton{WantSong, WantLearn},
-		[]tb.ReplyButton{Photos, News},
-		[]tb.ReplyButton{Comment, Lost},
-		[]tb.ReplyButton{MainMenuBtn},
+		{WantSong, WantLearn},
+		{Photos, News},
+		{Comment, Lost},
+		{MainMenuBtn},
 	}
 	//__________________________________________________________________________________________________________________Я НОВИЧОК
 
@@ -68,30 +66,30 @@ var (
 	Out       = tb.ReplyButton{Text: "Я погнал дальше"}
 
 	FirstVisitMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{WhatDoing},
-		[]tb.ReplyButton{In},
-		[]tb.ReplyButton{Out},
-		[]tb.ReplyButton{MainMenuBtn},
+		{WhatDoing},
+		{In},
+		{Out},
+		{MainMenuBtn},
 	}
-	//__________________________________________________________________________________________________________________ЧТО У ВАС ДЕЛАТЬ?
+	//__________________________________________________________________________________________________ЧТО У ВАС ДЕЛАТЬ?
 
 	MapYushin = tb.ReplyButton{Text: "Карта пространства"}
 	Geo       = tb.ReplyButton{Text: "Как добраться"}
 
 	WhatDoingMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{EventsWeek},
-		[]tb.ReplyButton{MapYushin},
-		[]tb.ReplyButton{Geo},
-		[]tb.ReplyButton{MainMenuBtn},
+		{EventsWeek},
+		{MapYushin},
+		{Geo},
+		{MainMenuBtn},
 	}
 	//__________________________________________________________________________________________________________________Я УЖЕ ТУТ
 
 	EventsWeek = tb.ReplyButton{Text: "Мероприятия на неделю"}
 
 	InMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{EventsWeek},
-		[]tb.ReplyButton{Bar},
-		[]tb.ReplyButton{MainMenuBtn},
+		{EventsWeek},
+		{Bar},
+		{MainMenuBtn},
 	}
 	//__________________________________________________________________________________________________________________Я ПОГНАЛ ДАЛЬШЕ
 
@@ -99,8 +97,8 @@ var (
 	WantClub = tb.ReplyButton{Text: "ХОЧУ ТУСИТЬ!!!"}
 
 	OutMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{WantHome, WantClub},
-		[]tb.ReplyButton{MainMenuBtn},
+		{WantHome, WantClub},
+		{MainMenuBtn},
 	}
 	//__________________________________________________________________________________________________________________ХОЧУ ТУСИТЬ!!!
 	MediumRare = tb.ReplyButton{Text: "Меньше 1000💸"}
@@ -109,11 +107,11 @@ var (
 	Craft      = tb.ReplyButton{Text: "Какие шекели? Я крафт люблю"}
 
 	ClubMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{MediumRare},
-		[]tb.ReplyButton{MediumWell},
-		[]tb.ReplyButton{WellDone},
-		[]tb.ReplyButton{Craft},
-		[]tb.ReplyButton{MainMenuBtn},
+		{MediumRare},
+		{MediumWell},
+		{WellDone},
+		{Craft},
+		{MainMenuBtn},
 	}
 	//____________________________АДМИНКА_______________________________АДМИНКА_________________________АДМИНКА__________
 
@@ -126,9 +124,9 @@ var (
 	Give        = false
 
 	AdminMenu = [][]tb.ReplyButton{
-		[]tb.ReplyButton{AddEvent, OnGive},
-		[]tb.ReplyButton{ViewSubs},
-		[]tb.ReplyButton{AddNews, AddLost, ViewComment},
-		[]tb.ReplyButton{MainMenuBtn},
+		{AddEvent, OnGive},
+		{ViewSubs},
+		{AddNews, AddLost, ViewComment},
+		{MainMenuBtn},
 	}
 )

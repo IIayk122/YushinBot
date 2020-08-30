@@ -10,6 +10,10 @@ import (
 //YushinMenuBtnHandle присылает кнопки с меню заведения
 func YushinMenuBtnHandle(b *tb.Bot, DB *mongo.Database) func(*tb.Message) {
 	return func(msg *tb.Message) {
-		b.Send(msg.Sender, "Меню", &tb.ReplyMarkup{ResizeReplyKeyboard: true, ReplyKeyboard: keyboard.YushinMenu})
+		b.Send(msg.Sender, "Меню",
+			&tb.ReplyMarkup{
+				ResizeReplyKeyboard: false,
+				ReplyKeyboard:       keyboard.YushinMenu,
+			})
 	}
 }

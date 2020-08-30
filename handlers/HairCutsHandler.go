@@ -7,6 +7,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/gridfs"
+	"gopkg.in/tucnak/telebot.v2"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
@@ -14,6 +15,8 @@ import (
 func HairCutsHandle(b *tb.Bot, DB *mongo.Database) func(*tb.Message) {
 
 	return func(msg *tb.Message) {
+		b.Notify(msg.Chat, telebot.UploadingPhoto)
+
 		var buffer bytes.Buffer
 		barberW := bufio.NewWriter(&buffer)
 		bucket, err := gridfs.NewBucket(DB)
